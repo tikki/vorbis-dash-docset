@@ -16,7 +16,7 @@ cur.execute('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TE
 cur.execute('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);')
 # add libs
 docBase = os.path.join(resBase, 'Documents')
-libs = 'libvorbis', 'vorbisenc', 'vorbisfile'
+libs = 'libogg', 'libvorbis', 'vorbisenc', 'vorbisfile'
 getInfo = re.compile(r'^<h1>(?P<name>.+?)</h1>').search
 for lib in libs:
 	relDocPath = os.path.join(lib, 'index.html')
